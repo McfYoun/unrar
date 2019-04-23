@@ -11,6 +11,9 @@
 		E06A7CD3226D5A1500FD0405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E06A7CD2226D5A1500FD0405 /* Assets.xcassets */; };
 		E06A7CD6226D5A1500FD0405 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06A7CD4226D5A1500FD0405 /* MainMenu.xib */; };
 		E06A7CD9226D5A1500FD0405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A7CD8226D5A1500FD0405 /* main.m */; };
+		E06A7CE1226D5B5300FD0405 /* unrar in Resources */ = {isa = PBXBuildFile; fileRef = E06A7CE0226D5B5300FD0405 /* unrar */; };
+		E06A7CE3226D5B5800FD0405 /* rar in Resources */ = {isa = PBXBuildFile; fileRef = E06A7CE2226D5B5800FD0405 /* rar */; };
+		E06A7CE7226D5DDB00FD0405 /* GCDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E06A7CE6226D5DDB00FD0405 /* GCDTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,10 @@
 		E06A7CD7226D5A1500FD0405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E06A7CD8226D5A1500FD0405 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E06A7CDA226D5A1500FD0405 /* Unrar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Unrar.entitlements; sourceTree = "<group>"; };
+		E06A7CE0226D5B5300FD0405 /* unrar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = unrar; sourceTree = "<group>"; };
+		E06A7CE2226D5B5800FD0405 /* rar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rar; sourceTree = "<group>"; };
+		E06A7CE5226D5DDB00FD0405 /* GCDTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTask.h; sourceTree = "<group>"; };
+		E06A7CE6226D5DDB00FD0405 /* GCDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +45,7 @@
 		E06A7CC3226D5A1500FD0405 = {
 			isa = PBXGroup;
 			children = (
+				E06A7CE4226D5DC600FD0405 /* GCDTask */,
 				E06A7CCE226D5A1500FD0405 /* Unrar */,
 				E06A7CCD226D5A1500FD0405 /* Products */,
 			);
@@ -58,11 +66,22 @@
 				E06A7CD0226D5A1500FD0405 /* AppDelegate.m */,
 				E06A7CD2226D5A1500FD0405 /* Assets.xcassets */,
 				E06A7CD4226D5A1500FD0405 /* MainMenu.xib */,
+				E06A7CE0226D5B5300FD0405 /* unrar */,
+				E06A7CE2226D5B5800FD0405 /* rar */,
 				E06A7CD7226D5A1500FD0405 /* Info.plist */,
 				E06A7CD8226D5A1500FD0405 /* main.m */,
 				E06A7CDA226D5A1500FD0405 /* Unrar.entitlements */,
 			);
 			path = Unrar;
+			sourceTree = "<group>";
+		};
+		E06A7CE4226D5DC600FD0405 /* GCDTask */ = {
+			isa = PBXGroup;
+			children = (
+				E06A7CE5226D5DDB00FD0405 /* GCDTask.h */,
+				E06A7CE6226D5DDB00FD0405 /* GCDTask.m */,
+			);
+			path = GCDTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +116,11 @@
 					E06A7CCB226D5A1500FD0405 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -123,6 +147,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06A7CE3226D5B5800FD0405 /* rar in Resources */,
+				E06A7CE1226D5B5300FD0405 /* unrar in Resources */,
 				E06A7CD3226D5A1500FD0405 /* Assets.xcassets in Resources */,
 				E06A7CD6226D5A1500FD0405 /* MainMenu.xib in Resources */,
 			);
@@ -135,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06A7CE7226D5DDB00FD0405 /* GCDTask.m in Sources */,
 				E06A7CD9226D5A1500FD0405 /* main.m in Sources */,
 				E06A7CD1226D5A1500FD0405 /* AppDelegate.m in Sources */,
 			);
@@ -261,7 +288,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Unrar/Unrar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Unrar/Info.plist;
@@ -275,7 +301,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Unrar/Unrar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Unrar/Info.plist;
