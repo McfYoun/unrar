@@ -24,7 +24,8 @@
     //获取解压路径，解压路径与待解压文件路径相同
     NSString * unrarPath = [_filePath.stringValue stringByReplacingOccurrencesOfString:@".rar" withString:@""];
     //拼接解压命令
-    NSString * shellCommand = [NSString stringWithFormat:@"%@ x %@ %@",path,_filePath.stringValue,unrarPath];
+    NSString * shellCommand = [NSString stringWithFormat:@"%@ x \"%@\" \"%@\"",path,_filePath.stringValue,unrarPath];
+    NSLog(@"%@",shellCommand);
     //若解压路径不存在就新建一个
     if (![[NSFileManager defaultManager] fileExistsAtPath:unrarPath])
     {
